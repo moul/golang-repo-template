@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: /go/src/moul.io/REPLACE_ME
+  working_directory: /go/src/moul.io/golang-repo-template
   docker:
     - image: circleci/golang:1.12
   environment:

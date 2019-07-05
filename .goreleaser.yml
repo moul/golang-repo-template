@@ -18,7 +18,7 @@ changelog:
     - '^docs:'
     - '^test:'
 brew:
-  name: REPLACE_ME
+  name: golang-repo-template
   github:
     owner: moul
     name: homebrew-moul
@@ -26,4 +26,4 @@ brew:
     name: moul-bot
     email: "m+bot@42.am"
   homepage: https://manfred.life/
-  description: "REPLACE_ME"
+  description: "golang-repo-template"

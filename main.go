@@ -1,4 +1,4 @@
-package main // import "moul.io/REPLACE_ME"
+package main // import "moul.io/golang-repo-template"
 
 import "fmt"
 

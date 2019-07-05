@@ -1,16 +1,29 @@
-# REPLACE_ME
+# golang-repo-template
 
-:smile: REPLACE_ME
+:smile: golang-repo-template does
+
+[![CircleCI](https://circleci.com/gh/moul/golang-repo-template.svg?style=svg)](https://circleci.com/gh/moul/golang-repo-template)
+[![GoDoc](https://godoc.org/moul.io/golang-repo-template?status.svg)](https://godoc.org/moul.io/golang-repo-template)
+[![Made by Manfred Touron](https://img.shields.io/badge/made%20by-Manfred%20Touron-blue.svg?style=flat)](https://manfred.life/)
+![License](https://img.shields.io/github/license/moul/golang-repo-template.svg)
+[![GitHub release](https://img.shields.io/github/release/moul/golang-repo-templatessh.svg)](https://github.com/moul/golang-repo-template/releases)
+[![Go Report Card](https://goreportcard.com/badge/moul.io/golang-repo-template)](https://goreportcard.com/report/moul.io/golang-repo-template)
+
+
 
 ## Usage
 
 ```console
-$ REPLACE_ME -h
+$ golang-repo-template -h
 ...
 ```
 
 ## Install
 
 ```console
-$ go get -u moul.io/REPLACE_ME
+$ go get -u moul.io/golang-repo-template
 ```
+
+## License
+
+© 2019 Manfred Touron (https://manfred.life) - Apache2 License

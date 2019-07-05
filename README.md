@@ -2,7 +2,7 @@
 
 :smile: golang-repo-template does
 
-[![CircleCI](https://circleci.com/gh/moul/golang-repo-template.svg?style=svg)](https://circleci.com/gh/moul/golang-repo-template)
+[![CircleCI](https://circleci.com/gh/moul/golang-repo-template.svg?style=shield)](https://circleci.com/gh/moul/golang-repo-template)
 [![GoDoc](https://godoc.org/moul.io/golang-repo-template?status.svg)](https://godoc.org/moul.io/golang-repo-template)
 [![Made by Manfred Touron](https://img.shields.io/badge/made%20by-Manfred%20Touron-blue.svg?style=flat)](https://manfred.life/)
 [![License](https://img.shields.io/github/license/moul/golang-repo-template.svg)](https://github.com/moul/golang-repo-template/blob/master/LICENSE)

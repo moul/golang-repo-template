@@ -39,7 +39,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *install_retry
-      - run: /tmp/retry -m 3 docker build -t moul/REPLACE_ME .
+      - run: /tmp/retry -m 3 docker build -t moul/replace_me .
       - run: /tmp/retry -m 3 make integration
 
 

@@ -27,20 +27,19 @@ jobs:
       - run: /tmp/retry -m 3 curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.12.2
       - run: PATH=$PATH:$(pwd)/bin /tmp/retry -m 3 make lint
 
-  docker.integration:
+  docker.build:
     <<: *defaults
     steps:
       - checkout
-      - run:
-          name: Install Docker Compose
-          command: |
-            umask 022
-            curl -L https://github.com/docker/compose/releases/download/1.11.4/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+      #- run:
+      #    name: Install Docker Compose
+      #    command: |
+      #      umask 022
+      #      curl -L https://github.com/docker/compose/releases/download/1.11.4/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
       - setup_remote_docker:
           docker_layer_caching: true
       - *install_retry
       - run: /tmp/retry -m 3 docker build -t moul/replace_me .
-      - run: /tmp/retry -m 3 make integration
 
 
 workflows:
@@ -48,5 +47,5 @@ workflows:
   build_and_integration:
     jobs:
       - go.build
-      - docker.integration
+      - docker.build
       # requires: docker.build?

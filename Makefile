@@ -1,10 +1,12 @@
+GO ?= go
+
 .PHONY: install
 install:
-	go install .
+	$(GO) install .
 
 .PHONY: test
 test:
-	go test -v ./...
+	$(GO) test -cover -v ./...
 
 .PHONY: lint
 lint:

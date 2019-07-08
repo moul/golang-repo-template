@@ -1,3 +1,15 @@
+##
+## Specific to .dockerignore
+##
+
+.git/
+Dockerfile
+contrib/
+
+##
+## Common with .gitignore
+##
+
 # Temporary files
 *~
 *#

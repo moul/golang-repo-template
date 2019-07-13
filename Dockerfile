@@ -9,7 +9,7 @@ COPY            . ./
 RUN             make install
 
 # minimalist runtime
-FROM            alpine
+FROM            alpine:3.10
 COPY            --from=builder /go/bin/golang-repo-template /bin/
 ENTRYPOINT      ["/bin/golang-repo-template"]
 CMD             []

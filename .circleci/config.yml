@@ -24,7 +24,7 @@ jobs:
       - run: /tmp/retry -m 3 go mod download
       - run: /tmp/retry -m 3 make install
       - run: /tmp/retry -m 3 go test -v ./...
-      - run: /tmp/retry -m 3 curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.12.2
+      - run: /tmp/retry -m 3 curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.15.0
       - run: PATH=$PATH:$(pwd)/bin /tmp/retry -m 3 make lint
 
   docker.build:

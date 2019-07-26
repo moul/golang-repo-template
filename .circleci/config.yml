@@ -9,30 +9,20 @@ executors:
       GO111MODULE: "on"
       DOCKER_IMAGE: moul/golang-repo-template
 
-commands:
-  install-retry:
-    steps:
-      - run: command -v wget &>/dev/null && wget -O /tmp/retry "https://github.com/moul/retry/releases/download/v0.5.0/retry_$(uname -s)_$(uname -m)" || true
-      - run: if [ ! -f /tmp/retry ]; then command -v curl &>/dev/null && curl -L -o /tmp/retry "https://github.com/moul/retry/releases/download/v0.5.0/retry_$(uname -s)_$(uname -m)"; fi
-      - run: chmod +x /tmp/retry
-      - run: /tmp/retry --version
-  install-golangci-lint:
-    steps:
-      - run: /tmp/retry -m 3 curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.15.0
-
 orbs:
   codecov: codecov/codecov@1.0.2
+  moul: moul/build@1.3.0
 
 jobs:
   go-build:
     executor: golang
     steps:
       - checkout
-      - install-retry
+      - moul/install_retry
       - run: /tmp/retry -m 3 go mod download
       - run: /tmp/retry -m 3 make install
       - run: /tmp/retry -m 3 make test
-      - install-golangci-lint
+      - moul/install_golangci-lint
       - run: PATH=$PATH:$(pwd)/bin /tmp/retry -m 3 make lint
       - codecov/upload:
           file: coverage.txt
@@ -43,7 +33,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
-      - install-retry
+      - moul/install_retry
       - run: /tmp/retry -m 3 docker build -t ${DOCKER_IMAGE} .
 
 workflows:

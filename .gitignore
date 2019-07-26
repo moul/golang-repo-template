@@ -2,6 +2,7 @@
 *~
 *#
 .#*
+coverage.txt
 
 # Vendors
 node_modules/

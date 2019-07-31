@@ -9,17 +9,26 @@ executors:
       GO111MODULE: "on"
       DOCKER_IMAGE: moul/golang-repo-template
 
+  docker:
+    docker:
+      - image: docker:18.06.3-ce-git
+
 orbs:
   codecov: codecov/codecov@1.0.5
-  moul: moul/build@1.4.0
+  moul: moul/build@1.5.0
+  retry: moul/retry@0.6.0
+  docker: circleci/docker@0.5.13
+  #dl: moul/dl@1.7.0
+  tools: gotest/tools@0.0.9
 
 jobs:
   go-build:
     executor: golang
     steps:
       - checkout
-      - moul/install_retry
-      - run: retry -m 3 go mod download
+      - retry/install
+      - tools/mod-download
+      - tools/mod-tidy-check
       - run: retry -m 3 make install
       - run: retry -m 3 make test
       - moul/install_golangci-lint
@@ -28,13 +37,14 @@ jobs:
           file: coverage.txt
 
   docker-build:
-    executor: golang
+    executor: docker
     steps:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
-      - moul/install_retry
-      - run: retry -m 3 docker build -t ${DOCKER_IMAGE} .
+      - docker/build:
+          image: moul/golang-repo-template
+      #- docker/dockerlint
 
 workflows:
   main:

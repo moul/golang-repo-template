@@ -1,4 +1,5 @@
 GO ?= go
+DOCKER_IMAGE ?= moul/golang-repo-template
 
 .PHONY: install
 install:
@@ -25,3 +26,7 @@ release:
 	goreleaser --snapshot --skip-publish --rm-dist
 	@echo -n "Do you want to release? [y/N] " && read ans && [ $${ans:-N} = y ]
 	goreleaser --rm-dist
+
+.PHONY: docker
+docker:
+	docker build -t $(DOCKER_IMAGE) .

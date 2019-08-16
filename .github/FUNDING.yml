@@ -1,4 +1,6 @@
 #github: ["moul"]
 patreon: moul
 open_collective: moul
-custom: ["https://manfred.life/donate"]
+custom:
+- "https://www.buymeacoffee.com/moul"
+- "https://manfred.life/donate"

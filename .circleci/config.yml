@@ -19,7 +19,7 @@ orbs:
   retry: moul/retry@0.6.0
   docker: circleci/docker@0.5.13
   #dl: moul/dl@1.7.0
-  tools: gotest/tools@0.0.9
+  tools: gotest/tools@0.0.10
 
 jobs:
   go-build:

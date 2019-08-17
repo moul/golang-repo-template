@@ -26,10 +26,6 @@ jobs:
     executor: golang
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - go-mod-v1-{{ checksum "go.sum" }}
-            - go-mod-v1-
       - retry/install
       - tools/mod-download
       - tools/mod-tidy-check
@@ -39,10 +35,6 @@ jobs:
       - run: PATH=$PATH:$(pwd)/bin retry -m 3 make lint
       - codecov/upload:
           file: coverage.txt
-      - save_cache:
-          key: go-mod-v1-{{ checksum "go.sum" }}
-          paths:
-            - /go/pkg/mod
 
   docker-build:
     executor: docker

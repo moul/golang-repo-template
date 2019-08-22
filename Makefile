@@ -6,7 +6,10 @@ install:
 	$(GO) install .
 
 .PHONY: test
-test:
+test: unittest lint tidy
+
+.PHONY: unittest
+unittest:
 	echo "" > /tmp/coverage.txt
 	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
 	  cd $$dir; \
@@ -19,7 +22,17 @@ test:
 
 .PHONY: lint
 lint:
-	golangci-lint run --verbose ./...
+	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
+	  cd $$dir; \
+	  golangci-lint run --verbose ./...; \
+	); done
+
+.PHONY: tidy
+tidy:
+	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
+	  cd $$dir; \
+	  $(GO)	mod tidy; \
+	); done
 
 .PHONY: release
 release:

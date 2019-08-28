@@ -34,6 +34,13 @@ tidy:
 	  $(GO)	mod tidy; \
 	); done
 
+.PHONY: bump-go-deps
+bump-go-deps:
+	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
+	  cd $$dir; \
+	  $(GO)	get -u ./...; \
+	); done
+
 .PHONY: release
 release:
 	goreleaser --snapshot --skip-publish --rm-dist

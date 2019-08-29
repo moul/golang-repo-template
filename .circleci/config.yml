@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  moul: moul/build@1.8.3
+  moul: moul/build@1.9.0
 
 workflows:
   main:

@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  moul: moul/build@1.8.3
+  moul: moul/build@1.9.1 # https://github.com/moul/build
 
 workflows:
   main:
@@ -11,5 +11,4 @@ workflows:
       - moul/golang-build:
           gopkg: moul.io/golang-repo-template
           tag: '1.11'
-      - moul/docker-build:
-          image: moul/golang-repo-template
+      - moul/docker-build

@@ -36,6 +36,6 @@ brew:
     name: homebrew-moul
   commit_author:
     name: moul-bot
-    email: "m+bot@42.am"
+    email: "bot@moul.io"
   homepage: https://manfred.life/
   description: "golang-repo-template"

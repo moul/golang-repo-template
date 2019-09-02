@@ -35,6 +35,18 @@ BUMPDEPS_STEPS += rulesmk.bumpdeps
 endif
 
 ##
+## Maintainer
+##
+
+.PHONY: generate.authors
+generate.authors:
+	echo "# This file lists all individuals having contributed content to the repository." > AUTHORS
+	echo "# For how it is generated, see 'https://github.com/moul/rules.mk'" >> AUTHORS
+	echo >> AUTHORS
+	git log --format='%aN <%aE>' | LC_ALL=C.UTF-8 sort -uf >> AUTHORS
+GENERATE_STEPS += generate.authors
+
+##
 ## Golang
 ##
 
@@ -94,8 +106,8 @@ go.bumpdeps:
 .PHONY: go.release
 go.release:
 	goreleaser --snapshot --skip-publish --rm-dist
-	@echo -n "Do you want to release? [y/N] " && read ans && [ $${ans:-N} = y ]
-	goreleaser --rm-dist
+	@echo -n "Do you want to release? [y/N] " && read ans && \
+	  if [ $${ans:-N} = y ]; then set -xe; goreleaser --rm-dist; fi
 
 BUILD_STEPS += go.build
 RELEASE_STEPS += go.release
@@ -103,6 +115,23 @@ BUMPDEPS_STEPS += go.bumpdeps
 TIDY_STEPS += go.tidy
 LINT_STEPS += go.lint
 UNITTEST_STEPS += go.unittest
+endif
+
+##
+## Node
+##
+
+ifdef NPM_PACKAGES
+.PHONY: npm.publish
+npm.publish:
+	@echo -n "Do you want to npm publish? [y/N] " && read ans && \
+	if [ $${ans:-N} = y ]; then \
+	  set -e; for dir in $(NPM_PACKAGES); do ( set -xe; \
+	    cd $$dir; \
+	    npm publish --access=public; \
+	  ); done; \
+	fi
+RELEASE_STEPS += npm.publish
 endif
 
 ##
@@ -162,7 +191,17 @@ ifdef BUILD_STEPS
 build: $(BUILD_STEPS)
 endif
 
+ifdef RELEASE_STEPS
+.PHONY: release
+release: $(RELEASE_STEPS)
+endif
+
 ifdef BUMPDEPS_STEPS
 .PHONY: bumpdeps
 bumpdeps: $(BUMPDEPS_STEPS)
+endif
+
+ifdef GENERATE_STEPS
+.PHONY: generate
+generate: $(GENERATE_STEPS)
 endif

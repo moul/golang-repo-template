@@ -12,11 +12,6 @@
         "install": "make install",
         "test": "make test"
     },
-    "files": [
-        "*.md",
-        "LICENSE*",
-        "COPYRIGHT"
-    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/moul/golang-repo-template.git"

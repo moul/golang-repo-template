@@ -23,9 +23,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots or logs to help explain your problem.
 
 **Versions (please complete the following information, if relevant):**
- - Software version: [e.g. v1.2.3, latest, building from sources]
- - OS: [e.g. Ubuntu, Mac, iOS, ...]
- - Golang version [e.g. 1.13]
+- Software version: [e.g. v1.2.3, latest, building from sources]
+- OS: [e.g. Ubuntu, Mac, iOS, ...]
+- Golang version [e.g. 1.13]
 
 **Additional context**
 Add any other context about the problem here.

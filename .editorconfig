@@ -10,13 +10,25 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
 
-[Makefile]
+[*.mod]
+indent_style = tab
+
+[{Makefile,**.mk}]
 indent_style = tab
 
 [*.go]
 indent_style = tab
 
+[*.css]
+indent_size = 2
+
 [*.proto]
+indent_size = 2
+
+[*.ftl]
+indent_size = 2
+
+[*.toml]
 indent_size = 2
 
 [*.swift]
@@ -30,16 +42,19 @@ indent_size = 2
 block_comment_start = /*
 block_comment_end = */
 
-[*.html]
+[*.{html,htm}]
 indent_size = 2
 
 [*.bat]
 end_of_line = crlf
 
-[*.{json,yml}]
+[*.{yml,yaml}]
 indent_size = 2
 
-[.{babelrc,eslintrc}]
+[*.json]
+indent_size = 2
+
+[.{babelrc,eslintrc,prettierrc}]
 indent_size = 2
 
 [{Fastfile,.buckconfig,BUCK}]

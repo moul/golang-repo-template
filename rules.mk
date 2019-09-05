@@ -57,8 +57,8 @@ ifdef GOBINS
 .PHONY: go.install
 go.install:
 	set -e; for dir in $(GOBINS); do ( set -xe; \
-	  cd $$dir; \
-	  $(GO) install .; \
+	        cd $$dir; \
+	        $(GO) install .; \
 	); done
 INSTALL_STEPS += go.install
 endif
@@ -67,47 +67,47 @@ endif
 go.unittest:
 	echo "" > /tmp/coverage.txt
 	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
-	  cd $$dir; \
-	  $(GO) test -v -cover -coverprofile=/tmp/profile.out -covermode=atomic -race ./...; \
-	  if [ -f /tmp/profile.out ]; then \
-	    cat /tmp/profile.out >> /tmp/coverage.txt; \
-	    rm -f /tmp/profile.out; \
-	  fi); done
+	        cd $$dir; \
+	        $(GO) test -v -cover -coverprofile=/tmp/profile.out -covermode=atomic -race ./...; \
+	        if [ -f /tmp/profile.out ]; then \
+	                cat /tmp/profile.out >> /tmp/coverage.txt; \
+	                rm -f /tmp/profile.out; \
+	        fi); done
 	mv /tmp/coverage.txt .
 
 .PHONY: go.lint
 go.lint:
 	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
-	  cd $$dir; \
-	  golangci-lint run --verbose ./...; \
+	        cd $$dir; \
+	        golangci-lint run --verbose ./...; \
 	); done
 
 .PHONY: go.tidy
 go.tidy:
 	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
-	  cd $$dir; \
-	  $(GO)	mod tidy; \
+	        cd $$dir; \
+	        $(GO)	mod tidy; \
 	); done
 
 .PHONY: go.build
 go.build:
 	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
-	  cd $$dir; \
-	  $(GO)	build ./...; \
+	        cd $$dir; \
+	        $(GO)	build ./...; \
 	); done
 
 .PHONY: go.bump-deps
 go.bumpdeps:
 	set -e; for dir in `find . -type f -name "go.mod" | sed 's@/[^/]*$$@@' | sort | uniq`; do ( set -xe; \
-	  cd $$dir; \
-	  $(GO)	get -u ./...; \
+	        cd $$dir; \
+	        $(GO)	get -u ./...; \
 	); done
 
 .PHONY: go.release
 go.release:
 	goreleaser --snapshot --skip-publish --rm-dist
 	@echo -n "Do you want to release? [y/N] " && read ans && \
-	  if [ $${ans:-N} = y ]; then set -xe; goreleaser --rm-dist; fi
+	        if [ $${ans:-N} = y ]; then set -xe; goreleaser --rm-dist; fi
 
 BUILD_STEPS += go.build
 RELEASE_STEPS += go.release
@@ -126,10 +126,10 @@ ifdef NPM_PACKAGES
 npm.publish:
 	@echo -n "Do you want to npm publish? [y/N] " && read ans && \
 	if [ $${ans:-N} = y ]; then \
-	  set -e; for dir in $(NPM_PACKAGES); do ( set -xe; \
-	    cd $$dir; \
-	    npm publish --access=public; \
-	  ); done; \
+	        set -e; for dir in $(NPM_PACKAGES); do ( set -xe; \
+	                cd $$dir; \
+	                npm publish --access=public; \
+	        ); done; \
 	fi
 RELEASE_STEPS += npm.publish
 endif
@@ -142,10 +142,10 @@ ifdef DOCKER_IMAGE
 .PHONY: docker.build
 docker.build:
 	docker build \
-	  --build-arg VCS_REF=`git rev-parse --short HEAD` \
-	  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-	  --build-arg VERSION=`git describe --tags --always` \
-	  -t $(DOCKER_IMAGE) .
+	        --build-arg VCS_REF=`git rev-parse --short HEAD` \
+	        --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+	        --build-arg VERSION=`git describe --tags --always` \
+	        -t $(DOCKER_IMAGE) .
 
 BUILD_STEPS += docker.build
 endif

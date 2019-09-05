@@ -10,5 +10,8 @@ workflows:
           gopkg: moul.io/golang-repo-template
       - moul/golang-build:
           gopkg: moul.io/golang-repo-template
+          tag: '1.12'
+      - moul/golang-build:
+          gopkg: moul.io/golang-repo-template
           tag: '1.11'
       - moul/docker-build

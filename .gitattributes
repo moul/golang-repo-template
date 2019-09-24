@@ -3,6 +3,7 @@
 
 # Collapse vendored and generated files on GitHub
 vendor/* linguist-vendored
+rules.mk linguest-vendored
 */vendor/* linguist-vendored
 *.gen.* linguist-generated
 *.pb.go linguist-generated

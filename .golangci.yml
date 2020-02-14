@@ -26,6 +26,7 @@ linters:
     - errcheck
     - unused
     - varcheck
+    - gochecknoinits
     - staticcheck
     - unconvert
     - gofmt

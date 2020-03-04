@@ -1,6 +1,6 @@
 package main
 
 func Example() {
-	main()
+	run(nil)
 	// Output: Hello World!
 }

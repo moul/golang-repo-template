@@ -43,7 +43,7 @@ https://github.com/moul/golang-repo-template/releases
 
 ## License
 
-© 2019 [Manfred Touron](https://manfred.life)
+© 2020 [Manfred Touron](https://manfred.life)
 
 Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) ([`LICENSE-APACHE`](LICENSE-APACHE)) or the [MIT license](https://opensource.org/licenses/MIT) ([`LICENSE-MIT`](LICENSE-MIT)), at your option. See the [`COPYRIGHT`](COPYRIGHT) file for more details.
 

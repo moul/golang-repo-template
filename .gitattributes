@@ -12,7 +12,6 @@ rules.mk linguist-vendored
 go.sum linguist-generated
 go.mod linguist-generated
 gen.sum linguist-generated
-rules.mk linguist-vendored
 
 # Reduce conflicts on markdown files
 *.md merge=union

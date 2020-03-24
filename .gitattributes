@@ -2,11 +2,13 @@
 * text=auto
 
 # Collapse vendored and generated files on GitHub
+AUTHORS linguist-generated
 vendor/* linguist-vendored
 rules.mk linguist-vendored
 */vendor/* linguist-vendored
 *.gen.* linguist-generated
 *.pb.go linguist-generated
+*.pb.gw.go linguist-generated
 go.sum linguist-generated
 go.mod linguist-generated
 gen.sum linguist-generated

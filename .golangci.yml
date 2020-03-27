@@ -2,6 +2,7 @@ run:
   deadline: 1m
   tests: false
   skip-files:
+    - "testing.go"
     - ".*\\.pb\\.go"
     - ".*\\.gen\\.go"
 

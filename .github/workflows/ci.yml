@@ -41,17 +41,37 @@ jobs:
       - name: Run tests on Windows
         run: make.exe unittest
         continue-on-error: true
-  tests-on-unix:
+  tests-on-mac:
     needs: golangci-lint # run after golangci-lint action to not produce duplicated errors
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     strategy:
       matrix:
         golang:
+          - 1.14
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.golang }}
+      - uses: actions/cache@v1
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-${{ matrix.golang }}-
+      - name: Run tests on Unix-like operating systems
+        run: make unittest
+  tests-on-linux:
+    needs: golangci-lint # run after golangci-lint action to not produce duplicated errors
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        golang:
+          - 1.11
+          - 1.12
           - 1.13
           - 1.14
-        os:
-          - ubuntu-latest
-          - macos-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install Go

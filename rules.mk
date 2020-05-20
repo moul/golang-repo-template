@@ -252,7 +252,7 @@ generate: $(PRE_GENERATE_STEPS) $(GENERATE_STEPS)
 endif
 
 .PHONY: help
-help:
+help::
 	@echo "General commands:"
 	@[ "$(BUILD_STEPS)" != "" ]     && echo "  build"     || true
 	@[ "$(BUMPDEPS_STEPS)" != "" ]  && echo "  bumpdeps"  || true

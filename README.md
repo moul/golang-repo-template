@@ -16,10 +16,7 @@
 
 ## Usage
 
-```console
-$ golang-repo-template -h
-...
-```
+TODO
 
 ## Install
 
@@ -29,15 +26,9 @@ $ golang-repo-template -h
 $ go get -u moul.io/golang-repo-template
 ```
 
-### Using brew
+### Releases
 
-```console
-$ brew install moul/moul/golang-repo-template
-```
-
-### Download releases
-
-https://github.com/moul/golang-repo-template/releases
+See https://github.com/moul/golang-repo-template/releases
 
 ## License
 

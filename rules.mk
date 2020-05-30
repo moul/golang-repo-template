@@ -180,6 +180,12 @@ endif
 ## Docker
 ##
 
+docker_build = 	docker build \
+	  --build-arg VCS_REF=`git rev-parse --short HEAD` \
+	  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+	  --build-arg VERSION=`git describe --tags --always` \
+	  -t "$2" -f "$1" "$(dir $1)"
+
 ifndef DOCKERFILE_PATH
 DOCKERFILE_PATH = ./Dockerfile
 endif
@@ -192,11 +198,7 @@ ifdef DOCKER_IMAGE
 ifneq ($(DOCKER_IMAGE),none)
 .PHONY: docker.build
 docker.build:
-	docker build \
-	  --build-arg VCS_REF=`git rev-parse --short HEAD` \
-	  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-	  --build-arg VERSION=`git describe --tags --always` \
-	  -t $(DOCKER_IMAGE) -f $(DOCKERFILE_PATH) $(dir $(DOCKERFILE_PATH))
+	$(call docker_build,$(DOCKERFILE_PATH),$(DOCKER_IMAGE))
 
 BUILD_STEPS += docker.build
 endif

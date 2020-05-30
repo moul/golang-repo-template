@@ -19,11 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: lint
-        uses: golangci/golangci-lint-action@v0.1.7
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v1
         with:
           version: v1.26
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          args: --timeout=2m
+          only-new-issues: false
+          working-directory: .
   tests-on-windows:
     needs: golangci-lint # run after golangci-lint action to not produce duplicated errors
     runs-on: windows-latest

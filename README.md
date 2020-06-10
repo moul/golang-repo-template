@@ -30,6 +30,10 @@ $ go get -u moul.io/golang-repo-template
 
 See https://github.com/moul/golang-repo-template/releases
 
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/moul/golang-repo-template.svg)](https://starchart.cc/moul/golang-repo-template)
+
 ## License
 
 © 2020 [Manfred Touron](https://manfred.life)

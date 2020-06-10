@@ -1,41 +1,73 @@
+env:
+  - GO111MODULE=on
+  - GOPROXY=https://proxy.golang.org
 before:
   hooks:
     - go mod download
 builds:
   -
-    goos: [linux, darwin, windows]
-    goarch: [386, amd64, arm, arm64]
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+    ignore:
+      -
+        goos: darwin
+        goarch: 386
     flags:
       - "-a"
     ldflags:
       - '-extldflags "-static"'
-    env:
-      - CGO_ENABLED=0
-archives:
-  - wrap_in_directory: true
-    replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
 checksum:
-  name_template: 'checksums.txt'
-snapshot:
-  name_template: "{{ .Tag }}-next"
+  name_template: '{{.ProjectName}}_checksums.txt'
 changelog:
   sort: asc
   filters:
     exclude:
     - '^docs:'
     - '^test:'
-brew:
-  name: golang-repo-template
-  github:
-    owner: moul
-    name: homebrew-moul
-  commit_author:
-    name: moul-bot
-    email: "bot@moul.io"
-  homepage: https://manfred.life/
-  description: "golang-repo-template"
+    - Merge pull request
+    - Merge branch
+archives:
+  -
+    name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    format_overrides:
+    -
+      goos: windows
+      format: zip
+    wrap_in_directory: true
+brews:
+  -
+    name: golang-repo-template
+#    github:
+#      owner: moul
+#      name: homebrew-moul
+    commit_author:
+      name: moul-bot
+      email: "bot@moul.io"
+    homepage: https://github.com/moul/golang-repo-template
+    description: "golang-repo-template"
+nfpms:
+  -
+    file_name_template: '{{ .ProjectName }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+    homepage:  https://github.com/moul/golang-repo-template
+    description: "golang-repo-template"
+    maintainer: "Manfred Touron <https://manfred.life>"
+    license: MIT
+    vendor: moul
+    formats:
+      - deb
+      - rpm

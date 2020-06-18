@@ -50,5 +50,7 @@ jobs:
         if: steps.semantic.outputs.new-release-published == 'true'
         run: |
           package=$(cat go.mod | grep ^module | awk '{print $2}')
-          version=${{ steps.semantic.outputs.new_release_version }}
-          curl -i https://proxy.golang.org/$package/@v/$version.info || true
+          version=${{ steps.semantic.outputs.release-version }}
+          url=https://proxy.golang.org/$package/@v/$version.info
+          set -x +e
+          curl -i $url

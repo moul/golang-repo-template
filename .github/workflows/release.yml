@@ -45,3 +45,10 @@ jobs:
           args: release --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Register version on pkg.go.dev
+        if: steps.semantic.outputs.new-release-published == 'true'
+        run: |
+          package=$(cat go.mod | grep ^module | awk '{print $2}')
+          version=${{ steps.semantic.outputs.new_release_version }}
+          curl -i https://proxy.golang.org/$package/@v/$version.info || true

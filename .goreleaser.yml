@@ -66,7 +66,7 @@ nfpms:
     homepage:  https://github.com/moul/golang-repo-template
     description: "golang-repo-template"
     maintainer: "Manfred Touron <https://manfred.life>"
-    license: MIT
+    license: "Apache-2.0 OR MIT"
     vendor: moul
     formats:
       - deb

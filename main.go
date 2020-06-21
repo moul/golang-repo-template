@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+
+	"moul.io/motd"
+	"moul.io/srand"
 )
 
 func main() {
@@ -13,7 +16,10 @@ func main() {
 	}
 }
 
+// nolint:unparam
 func run(args []string) error {
-	fmt.Println("Hello World!")
+	srand.Fast()
+	fmt.Print(motd.Default())
+	fmt.Println("Hello World!", args)
 	return nil
 }

@@ -88,9 +88,11 @@ jobs:
           key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-${{ matrix.golang }}-
+      - name: Compile the project
+        run: make go.install
       - name: Run tests on Unix-like operating systems
         run: make unittest
-      - name: Check go.mod
+      - name: Check go.mod and go.sum
         run: |
           go mod tidy -v
           git --no-pager diff go.mod go.sum
@@ -129,6 +131,13 @@ jobs:
           key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-${{ matrix.golang }}-
+      - name: Compile the project
+        run: make go.install
+      - name: Check go.mod and go.sum
+        run: |
+          go mod tidy -v
+          git --no-pager diff go.mod go.sum
+          git --no-pager diff --quiet go.mod go.sum
       - name: Run tests on Unix-like operating systems
         run: make unittest
       - name: Upload coverage to Codecov

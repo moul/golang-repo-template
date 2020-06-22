@@ -1,8 +1,14 @@
+go-test.json
+
 # Temporary files
 *~
 *#
 .#*
 coverage.txt
+
+go-build.log
+go-install.log
+go-test.json
 
 # Vendors
 package-lock.json

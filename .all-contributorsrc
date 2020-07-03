@@ -1,0 +1,20 @@
+{
+  "projectName": "golang-repo-template",
+  "projectOwner": "moul",
+  "commitConvention": "angular",
+  "repoType": "github",
+  "contributors": [
+    {
+      "login": "moul",
+      "name": "Manfred Touron",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/94029?v=4",
+      "profile": "https://manfred.life/",
+      "contributions": [
+        "code",
+        "doc",
+        "question",
+        "maintenance"
+      ]
+    }
+  ]
+}

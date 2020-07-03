@@ -123,7 +123,7 @@ jobs:
           flags: unittests
           env_vars: OS,GOLANG
           name: codecov-umbrella
-          fail_ci_if_error: true
+          fail_ci_if_error: false
   tests-on-linux:
     needs: golangci-lint # run after golangci-lint action to not produce duplicated errors
     runs-on: ubuntu-latest
@@ -166,7 +166,7 @@ jobs:
           flags: unittests
           env_vars: OS,GOLANG
           name: codecov-umbrella
-          fail_ci_if_error: true
+          fail_ci_if_error: false
       - name: Upload to Report.ci
         if: always() && matrix.golang == 1.14
         env:

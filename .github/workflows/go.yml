@@ -1,11 +1,29 @@
-name: CI
+name: Go
 on:
   push:
     tags:
       - v*
     branches:
       - master
+    paths:
+      - '**.go'
+      - ".goreleaser.yml"
+      - ".golangci.yml"
+      - ".dockerignore"
+      - "Makefile"
+      - "rules.mk"
+      - "go.*"
+      - ".github/workflows/go.yml"
   pull_request:
+    paths:
+      - '**.go'
+      - ".goreleaser.yml"
+      - ".golangci.yml"
+      - ".dockerignore"
+      - "Makefile"
+      - "rules.mk"
+      - "go.*"
+      - ".github/workflows/go.yml"
 
 jobs:
   docker-build:

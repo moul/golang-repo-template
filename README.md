@@ -1,7 +1,4 @@
 # golang-repo-template
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 :smile: golang-repo-template
 
@@ -35,19 +32,19 @@ $ go get -u moul.io/golang-repo-template
 
 See https://github.com/moul/golang-repo-template/releases
 
-## Stargazers over time
+## Contributing
 
-[![Stargazers over time](https://starchart.cc/moul/golang-repo-template.svg)](https://starchart.cc/moul/golang-repo-template)
+<!-- FIXME: contributing.gif -->
 
-## License
+I really welcome contributions. Your input is the most precious material. I'm well aware of that and I thank you in advance. Everyone is encouraged to look at what they can do on their own scale; no effort is too small.
 
-© 2020 [Manfred Touron](https://manfred.life)
+Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) ([`LICENSE-APACHE`](LICENSE-APACHE)) or the [MIT license](https://opensource.org/licenses/MIT) ([`LICENSE-MIT`](LICENSE-MIT)), at your option. See the [`COPYRIGHT`](COPYRIGHT) file for more details.
+### Contributors ✨
 
-`SPDX-License-Identifier: (Apache-2.0 OR MIT)`
-
-## Contributors ✨
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -65,3 +62,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+### Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/moul/golang-repo-template.svg)](https://starchart.cc/moul/golang-repo-template)
+
+## License
+
+© 2020 [Manfred Touron](https://manfred.life)
+
+Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) ([`LICENSE-APACHE`](LICENSE-APACHE)) or the [MIT license](https://opensource.org/licenses/MIT) ([`LICENSE-MIT`](LICENSE-MIT)), at your option. See the [`COPYRIGHT`](COPYRIGHT) file for more details.
+
+`SPDX-License-Identifier: (Apache-2.0 OR MIT)`

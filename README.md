@@ -6,13 +6,11 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0%20%2F%20MIT-%2397ca00.svg)](https://github.com/moul/golang-repo-template/blob/master/COPYRIGHT)
 [![GitHub release](https://img.shields.io/github/release/moul/golang-repo-template.svg)](https://github.com/moul/golang-repo-template/releases)
 [![Docker Metrics](https://images.microbadger.com/badges/image/moul/golang-repo-template.svg)](https://microbadger.com/images/moul/golang-repo-template)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Made by Manfred Touron](https://img.shields.io/badge/made%20by-Manfred%20Touron-blue.svg?style=flat)](https://manfred.life/)
 
 [![Go](https://github.com/moul/golang-repo-template/workflows/Go/badge.svg)](https://github.com/moul/golang-repo-template/actions?query=workflow%3AGo)
 [![Release](https://github.com/moul/golang-repo-template/workflows/Release/badge.svg)](https://github.com/moul/golang-repo-template/actions?query=workflow%3ARelease)
+[![PR](https://github.com/moul/golang-repo-template/workflows/PR/badge.svg)](https://github.com/moul/golang-repo-template/actions?query=workflow%3APR)
 [![GolangCI](https://golangci.com/badges/github.com/moul/golang-repo-template.svg)](https://golangci.com/r/github.com/moul/golang-repo-template)
 [![codecov](https://codecov.io/gh/moul/golang-repo-template/branch/master/graph/badge.svg)](https://codecov.io/gh/moul/golang-repo-template)
 [![Go Report Card](https://goreportcard.com/badge/moul.io/golang-repo-template)](https://goreportcard.com/report/moul.io/golang-repo-template)

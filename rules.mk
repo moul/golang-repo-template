@@ -181,6 +181,20 @@ FMT_STEPS += go.fmt
 endif
 
 ##
+## Gitattributes
+##
+
+ifneq ($(wildcard .gitattributes),)
+.PHONY: _linguist-ignored
+_linguist-kept:
+	@git check-attr linguist-vendored $(shell git check-attr linguist-generated $(shell find . -type f | grep -v .git/) | grep unspecified | cut -d: -f1) | grep unspecified | cut -d: -f1 | sort
+
+.PHONY: _linguist-kept
+_linguist-ignored:
+	@git check-attr linguist-vendored linguist-ignored `find . -not -path './.git/*' -type f` | grep '\ set$$' | cut -d: -f1 | sort -u
+endif
+
+##
 ## Node
 ##
 

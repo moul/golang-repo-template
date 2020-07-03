@@ -3,6 +3,11 @@ name: PR
 on:
   pull_request:
     branches: [ master ]
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
   issue_comment:
     types: [ edited ]
 
@@ -20,3 +25,8 @@ jobs:
       env:
         GITHUB_PR_USERNAME: ${{ github.actor }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  conventional-title:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: agenthunt/conventional-commit-checker-action@v1.0.0

@@ -17,6 +17,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "moul-bot",
+      "name": "moul-bot",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/41326314?v=4",
+      "profile": "https://manfred.life/moul-bot",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,

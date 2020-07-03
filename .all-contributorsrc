@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "moul",
+      "name": "Manfred Touron",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/94029?v=4",
+      "profile": "http://manfred.life",
+      "contributions": [
+        "maintenance",
+        "doc",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "golang-repo-template",
+  "projectOwner": "moul",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

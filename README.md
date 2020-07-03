@@ -43,7 +43,7 @@ Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
 ### Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -54,6 +54,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://manfred.life"><img src="https://avatars1.githubusercontent.com/u/94029?v=4" width="100px;" alt=""/><br /><sub><b>Manfred Touron</b></sub></a><br /><a href="#maintenance-moul" title="Maintenance">🚧</a> <a href="https://github.com/moul/golang-repo-template/commits?author=moul" title="Documentation">📖</a> <a href="https://github.com/moul/golang-repo-template/commits?author=moul" title="Tests">⚠️</a> <a href="https://github.com/moul/golang-repo-template/commits?author=moul" title="Code">💻</a></td>
+    <td align="center"><a href="https://manfred.life/moul-bot"><img src="https://avatars1.githubusercontent.com/u/41326314?v=4" width="100px;" alt=""/><br /><sub><b>moul-bot</b></sub></a><br /><a href="#maintenance-moul-bot" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 

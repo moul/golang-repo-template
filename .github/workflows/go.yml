@@ -150,14 +150,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-${{ matrix.golang }}-
       - name: Compile the project
-        run: make go.install CI=true
+        run: make go.install
       - name: Check go.mod and go.sum
         run: |
           go mod tidy -v
           git --no-pager diff go.mod go.sum
           git --no-pager diff --quiet go.mod go.sum
       - name: Run tests on Unix-like operating systems
-        run: make unittest CI=true
+        run: make unittest
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
@@ -167,13 +167,3 @@ jobs:
           env_vars: OS,GOLANG
           name: codecov-umbrella
           fail_ci_if_error: false
-      - name: Upload to Report.ci
-        if: always() && matrix.golang == 1.14
-        env:
-          REPORT_CI_TOKEN: ${{ secrets.REPORT_CI_TOKEN }}
-        run: |
-          ls -la go-install.log go-build.log go-test.json || true
-          # merge build logs
-          (cat go-install.log go-build.log > go-annotate.log) || true
-          curl -s https://report.ci/annotate.py | python - --input="go-annotate.log" --tool=go || true
-          curl -s https://report.ci/upload.py   | python - --include="go-test.json" --framework=go || true

@@ -20,6 +20,6 @@ func main() {
 func run(args []string) error {
 	srand.Fast()
 	fmt.Print(motd.Default())
-	fmt.Println("Hello World!", args)
+	fmt.Println("Hello World!!", args)
 	return nil
 }

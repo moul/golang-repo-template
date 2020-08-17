@@ -40,7 +40,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.14
+          go-version: 1.15.0
       - name: Cache Go modules
         uses: actions/cache@v1
         with:
@@ -73,8 +73,11 @@ jobs:
     strategy:
       matrix:
         golang:
-          #- 1.13
-          - 1.14
+          #- 1.11.13
+          #- 1.12.17
+          #- 1.13.15
+          #- 1.14.7
+          - 1.15.0
     steps:
       - uses: actions/checkout@v2
       - name: Install Go
@@ -130,10 +133,11 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.11
-          - 1.12
-          - 1.13
-          - 1.14
+          - 1.11.13
+          - 1.12.17
+          - 1.13.15
+          - 1.14.7
+          - 1.15.0
     env:
       OS: ubuntu-latest
       GOLANG: ${{ matrix.golang }}

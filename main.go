@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 
 	"moul.io/motd"
@@ -18,7 +19,7 @@ func main() {
 
 // nolint:unparam
 func run(args []string) error {
-	srand.Fast()
+	rand.Seed(srand.Fast())
 	fmt.Print(motd.Default())
 	fmt.Println("Hello World!", args)
 	return nil

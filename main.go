@@ -21,6 +21,9 @@ func main() {
 func run(args []string) error {
 	rand.Seed(srand.Fast())
 	fmt.Print(motd.Default())
-	fmt.Println("Hello World!", args)
+	fmt.Println("Hello World!")
+	if len(args) > 1 {
+		fmt.Println("args", args)
+	}
 	return nil
 }

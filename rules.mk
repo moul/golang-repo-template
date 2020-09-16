@@ -150,10 +150,22 @@ go.lint:
 
 .PHONY: go.tidy
 go.tidy:
+	# tidy dirs with go.mod files
 	@set -e; for dir in $(GOMOD_DIRS); do ( set -xe; \
 	  cd $$dir; \
 	  $(GO)	mod tidy; \
 	); done
+	# gen depaware for bins
+	@set -e; for dir in $(GOBINS); do ( set -xe; \
+	  cd $$dir; \
+	  $(GO) run github.com/tailscale/depaware --update .; \
+	); done
+	# tidy again to remove unused depaware deps
+	@set -e; for dir in $(GOMOD_DIRS); do ( set -xe; \
+	  cd $$dir; \
+	  $(GO)	mod tidy; \
+	); done
+
 
 .PHONY: go.build
 go.build:

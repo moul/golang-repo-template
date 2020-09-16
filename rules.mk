@@ -23,7 +23,8 @@
 # ||  |       |  |    | |                   /_/_/_/\___/\_,_/_/  |
 # +--------------------------------------------------------------+
 
-all: help
+.PHONY: _default_entrypoint
+_default_entrypoint: help
 
 ##
 ## Common helpers
@@ -158,17 +159,25 @@ go.tidy:
 
 .PHONY: go.depaware-update
 go.depaware-update: go.tidy
-	# gen depaware for bins
+	@# gen depaware for bins
 	@set -e; for dir in $(GOBINS); do ( set -xe; \
 	  cd $$dir; \
 	  $(GO) run github.com/tailscale/depaware --update .; \
 	); done
-	# tidy unused depaware deps if not in a tools_test.go file
+	@# tidy unused depaware deps if not in a tools_test.go file
 	@set -e; for dir in $(GOMOD_DIRS); do ( set -xe; \
 	  cd $$dir; \
 	  $(GO)	mod tidy; \
 	); done
-GENERATE_STEPS += go.depaware-update
+
+.PHONY: go.depaware-check
+go.depaware-check: go.tidy
+	@# gen depaware for bins
+	@set -e; for dir in $(GOBINS); do ( set -xe; \
+	  cd $$dir; \
+	  $(GO) run github.com/tailscale/depaware --check .; \
+	); done
+
 
 .PHONY: go.build
 go.build:
@@ -192,12 +201,14 @@ go.fmt:
 	  goimports -w `go list -f '{{.Dir}}' ./...)` \
 	); done
 
+VERIFY_STEPS += go.depaware-check
 BUILD_STEPS += go.build
-BUMPDEPS_STEPS += go.bumpdeps
+BUMPDEPS_STEPS += go.bumpdeps go.depaware-update
 TIDY_STEPS += go.tidy
 LINT_STEPS += go.lint
 UNITTEST_STEPS += go.unittest
 FMT_STEPS += go.fmt
+GENERATE_STEPS += go.depaware-update
 endif
 
 ##
@@ -303,6 +314,11 @@ ifdef BUILD_STEPS
 build: $(PRE_BUILD_STEPS) $(BUILD_STEPS)
 endif
 
+ifdef VERIFY_STEPS
+.PHONY: verify
+verify: $(PRE_VERIFY_STEPS) $(VERIFY_STEPS)
+endif
+
 ifdef RELEASE_STEPS
 .PHONY: release
 release: $(PRE_RELEASE_STEPS) $(RELEASE_STEPS)
@@ -336,6 +352,7 @@ help::
 	@[ "$(TEST_STEPS)" != "" ]      && echo "  test"      || true
 	@[ "$(TIDY_STEPS)" != "" ]      && echo "  tidy"      || true
 	@[ "$(UNITTEST_STEPS)" != "" ]  && echo "  unittest"  || true
+	@[ "$(VERIFY_STEPS)" != "" ]    && echo "  verify"    || true
 	@# FIXME: list other commands
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true

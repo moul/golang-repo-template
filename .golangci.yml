@@ -27,6 +27,7 @@ linters:
     - dupl
     - errcheck
     #- funlen
+    - gci
     - gochecknoinits
     #- gocognit
     - goconst

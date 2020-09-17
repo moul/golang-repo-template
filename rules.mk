@@ -195,10 +195,9 @@ go.bumpdeps:
 
 .PHONY: go.bump-deps
 go.fmt:
-	if ! command -v goimports &>/dev/null; then GO111MODULE=off go get golang.org/x/tools/cmd/goimports; fi
 	@set -e; for dir in $(GOMOD_DIRS); do ( set -xe; \
 	  cd $$dir; \
-	  goimports -w `go list -f '{{.Dir}}' ./...)` \
+	  $(GO) run golang.org/x/tools/cmd/goimports -w `go list -f '{{.Dir}}' ./...)` \
 	); done
 
 VERIFY_STEPS += go.depaware-check

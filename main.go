@@ -8,6 +8,7 @@ import (
 
 	"moul.io/motd"
 	"moul.io/srand"
+	"moul.io/u"
 	"moul.io/zapconfig"
 )
 
@@ -26,6 +27,6 @@ func run(args []string) error {
 		return err
 	}
 	logger.Info("Hello World!")
-	fmt.Println("args", args)
+	fmt.Println("args", u.JSON(args))
 	return nil
 }

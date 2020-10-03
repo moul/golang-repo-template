@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"math/rand"
 	"os"
 
@@ -14,7 +13,7 @@ import (
 
 func main() {
 	if err := run(os.Args); err != nil {
-		log.Fatalf("error: %v", err)
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
 	}
 }

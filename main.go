@@ -19,15 +19,13 @@ func main() {
 }
 
 func run(args []string) error {
-	logger, err := zapconfig.Configurator{}.BuildLogger()
+	rand.Seed(srand.Fast())
+	fmt.Print(motd.Default())
+	logger, err := zapconfig.Configurator{}.Build()
 	if err != nil {
 		return err
 	}
-	rand.Seed(srand.Fast())
-	fmt.Print(motd.Default())
 	logger.Info("Hello World!")
-	if len(args) > 1 {
-		fmt.Println("args", args)
-	}
+	fmt.Println("args", args)
 	return nil
 }

@@ -16,26 +16,26 @@
 [![Go Report Card](https://goreportcard.com/badge/moul.io/golang-repo-template)](https://goreportcard.com/report/moul.io/golang-repo-template)
 [![CodeFactor](https://www.codefactor.io/repository/github/moul/golang-repo-template/badge)](https://www.codefactor.io/repository/github/moul/golang-repo-template)
 
-
 ## Usage
 
 [embedmd]:# (.tmp/usage.txt console)
 ```console
-foo@bar:~$ golang-repo-template
+foo@bar:~$ golang-repo-template hello world
             _                                                   _                      _        _
  __ _  ___ | | __ _  _ _   __ _  ___  _ _  ___  _ __  ___  ___ | |_  ___  _ __   _ __ | | __ _ | |_  ___
 / _` |/ _ \| |/ _` || ' \ / _` ||___|| '_|/ -_)| '_ \/ _ \|___||  _|/ -_)| '  \ | '_ \| |/ _` ||  _|/ -_)
 \__, |\___/|_|\__,_||_||_|\__, |     |_|  \___|| .__/\___/      \__|\___||_|_|_|| .__/|_|\__,_| \__|\___|
 |___/                     |___/                |_|                              |_|
 12 CPUs, /home/moul/go/bin/golang-repo-template, fwrz, go1.15.2
+args ["golang-repo-template","hello","world"]
 ```
 
 ## Install
 
 ### Using go
 
-```console
-$ go get -u moul.io/golang-repo-template
+```sh
+go get moul.io/golang-repo-template
 ```
 
 ### Releases
@@ -46,7 +46,11 @@ See https://github.com/moul/golang-repo-template/releases
 
 ![Contribute <3](https://raw.githubusercontent.com/moul/moul/master/contribute.gif)
 
-I really welcome contributions. Your input is the most precious material. I'm well aware of that and I thank you in advance. Everyone is encouraged to look at what they can do on their own scale; no effort is too small.
+I really welcome contributions.
+Your input is the most precious material.
+I'm well aware of that and I thank you in advance.
+Everyone is encouraged to look at what they can do on their own scale;
+no effort is too small.
 
 Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
@@ -72,7 +76,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
 
 ### Stargazers over time
 
@@ -82,6 +87,9 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 © 2020 [Manfred Touron](https://manfred.life)
 
-Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) ([`LICENSE-APACHE`](LICENSE-APACHE)) or the [MIT license](https://opensource.org/licenses/MIT) ([`LICENSE-MIT`](LICENSE-MIT)), at your option. See the [`COPYRIGHT`](COPYRIGHT) file for more details.
+Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+([`LICENSE-APACHE`](LICENSE-APACHE)) or the [MIT license](https://opensource.org/licenses/MIT)
+([`LICENSE-MIT`](LICENSE-MIT)), at your option.
+See the [`COPYRIGHT`](COPYRIGHT) file for more details.
 
 `SPDX-License-Identifier: (Apache-2.0 OR MIT)`

@@ -8,5 +8,5 @@ require (
 	moul.io/motd v1.0.0
 	moul.io/srand v1.6.0
 	moul.io/u v1.16.0
-	moul.io/zapconfig v1.1.0
+	moul.io/zapconfig v1.2.0
 )

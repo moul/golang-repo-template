@@ -12,3 +12,8 @@ generate: install
 	golang-repo-template hello world 2>&1 >> .tmp/usage.txt
 	embedmd -w README.md
 	rm -rf .tmp
+.PHONY: generate
+
+lint:
+	cd tool/lint; make
+.PHONY: lint

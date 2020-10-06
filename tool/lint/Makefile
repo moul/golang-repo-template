@@ -9,32 +9,38 @@ test: info offensive-wording remark markdownlint spellcheck
 	@echo "--- OK. ---"
 .PHONY: test
 
-info:
+info: deps
 	@echo ""
 	@echo "==> Files to check:"
 	@echo "  $(testfiles:../.%=%)"
 .PHONY: info
 
-offensive-wording:
+offensive-wording: deps
 	@echo ""
 	@echo "==> Checking for inconsiderate/insensitive wording..."
 	@node_modules/.bin/alex --diff $(testfiles) || true
 .PHONY: offensive-wording
 
-spellcheck:
+spellcheck: deps
 	@echo ""
 	@echo "==> Checking for spelling errors..."
 	@node_modules/.bin/mdspell --report --en-us --ignore-numbers --ignore-acronyms $(testfiles)
 .PHONY: spellcheck
 
-remark:
+remark: deps
 	@echo ""
 	@echo "==> Checking for messy formatting..."
 	@node_modules/.bin/remark --frail $(testfiles)
 .PHONY: remark
 
-markdownlint:
+markdownlint: deps
 	@echo ""
 	@echo "==> Checking for good practices..."
 	@node_modules/.bin/markdownlint $(testfiles)
 .PHONY: markdownlint
+
+deps: node_modules/
+node_modules: package.json
+	npm install
+	touch $@
+.PHONY: deps

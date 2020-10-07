@@ -40,7 +40,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.15.1
+          go-version: 1.15.x
       - name: Cache Go modules
         uses: actions/cache@v1
         with:
@@ -60,10 +60,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v1
+        uses: golangci/golangci-lint-action@v2
         with:
           version: v1.31
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          #github-token: ${{ secrets.GITHUB_TOKEN }}
           args: --timeout=2m
           only-new-issues: false
           working-directory: .
@@ -73,11 +73,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          #- 1.11.13
-          #- 1.12.17
-          #- 1.13.15
-          #- 1.14.7
-          - 1.15.1
+          - 1.15.x
     steps:
       - uses: actions/checkout@v2
       - name: Install Go
@@ -93,7 +89,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.15
+          - 1.15.x
     env:
       OS: macos-latest
       GOLANG: ${{ matrix.golang }}
@@ -133,11 +129,11 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.11.13
-          - 1.12.17
-          - 1.13.15
-          - 1.14.7
-          - 1.15.1
+          - 1.11.x
+          - 1.12.x
+          - 1.13.x
+          - 1.14.x
+          - 1.15.x
     env:
       OS: ubuntu-latest
       GOLANG: ${{ matrix.golang }}

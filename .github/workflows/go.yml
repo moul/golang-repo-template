@@ -26,13 +26,7 @@ on:
       - ".github/workflows/go.yml"
 
 jobs:
-  docker-build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile
-  goreleaser:
+  goreleaser-dryrun:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

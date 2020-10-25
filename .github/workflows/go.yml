@@ -36,7 +36,7 @@ jobs:
         with:
           go-version: 1.15.x
       - name: Cache Go modules
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -93,7 +93,7 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.golang }}
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}
@@ -137,7 +137,7 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.golang }}
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}

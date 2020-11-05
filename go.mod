@@ -3,7 +3,7 @@ module moul.io/golang-repo-template
 go 1.13
 
 require (
-	github.com/tailscale/depaware v0.0.0-20201003033024-5d95aab075be
+	github.com/tailscale/depaware v0.0.0-20201102210757-e2f543bafb1d
 	go.uber.org/goleak v1.1.10
 	golang.org/x/tools v0.0.0-20201005185003-576e169c3de7 // indirect
 	moul.io/motd v1.0.0

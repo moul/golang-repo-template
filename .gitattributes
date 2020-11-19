@@ -2,14 +2,14 @@
 *                   text=auto
 
 # Collapse generated and vendored files on GitHub
-AUTHORS             linguist-generated
-*.gen.*             linguist-generated
-*.pb.go             linguist-generated
-*.pb.gw.go          linguist-generated
-go.sum              linguist-generated
+AUTHORS             linguist-generated merge=union
+*.gen.*             linguist-generated merge=ours
+*.pb.go             linguist-generated merge=ours
+*.pb.gw.go          linguist-generated merge=ours
+go.sum              linguist-generated merge=ours
 go.mod              linguist-generated
-gen.sum             linguist-generated
-depaware.txt        linguist-generated linguist-vendored diff
+gen.sum             linguist-generated merge=ours
+depaware.txt        linguist-generated linguist-vendored merge=union
 vendor/*            linguist-vendored
 rules.mk            linguist-vendored
 */vendor/*          linguist-vendored

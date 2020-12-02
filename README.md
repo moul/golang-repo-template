@@ -16,6 +16,8 @@
 [![Go Report Card](https://goreportcard.com/badge/moul.io/golang-repo-template)](https://goreportcard.com/report/moul.io/golang-repo-template)
 [![CodeFactor](https://www.codefactor.io/repository/github/moul/golang-repo-template/badge)](https://www.codefactor.io/repository/github/moul/golang-repo-template)
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/moul/golang-tepo-template)
+
 ## Usage
 
 [embedmd]:# (.tmp/usage.txt console)

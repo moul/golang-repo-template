@@ -28,6 +28,8 @@ github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/tailscale/depaware v0.0.0-20201102210757-e2f543bafb1d h1:6tSgagMJvBlaa402Ecdtd6DLbdVs4EUzaJBVs+J7sr8=
 github.com/tailscale/depaware v0.0.0-20201102210757-e2f543bafb1d/go.mod h1:jissDaJNHiyV2tFdr3QyNEfsZrax/i2yQiSO+CljThI=
+github.com/tailscale/depaware v0.0.0-20201210233412-71b54857b5d9 h1:IquU2Mhy4Q+xUYoRLHMiEamd80OShhYXhTNywEbQu3g=
+github.com/tailscale/depaware v0.0.0-20201210233412-71b54857b5d9/go.mod h1:jissDaJNHiyV2tFdr3QyNEfsZrax/i2yQiSO+CljThI=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 go.uber.org/atomic v1.6.0/go.mod h1:sABNBOSYdrvTF6hTgEIbc7YasKWGhgEQZyfxyTvoXHQ=
 go.uber.org/atomic v1.7.0 h1:ADUqmZGgLDDfbSL9ZmPxKTybcoEYHgpYfELNoN+7hsw=

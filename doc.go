@@ -1,4 +1,4 @@
-// Copyright © 2020 Manfred Touron <manfred.life>
+// Copyright © 2020-2021 Manfred Touron <manfred.life>
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
 // message from the author:

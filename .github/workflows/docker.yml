@@ -9,7 +9,7 @@ on:
 
 jobs:
   multi:
-    name: "Multi"
+    name: "build-and-push"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

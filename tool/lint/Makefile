@@ -40,7 +40,7 @@ markdownlint: deps
 .PHONY: markdownlint
 
 deps: node_modules/
-node_modules: package.json
+node_modules/: package.json
 	npm install
 	touch $@
 .PHONY: deps

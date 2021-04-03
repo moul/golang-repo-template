@@ -1,7 +1,7 @@
 name: Docker
 on:
   push:
-    branch: master
+    branch: ['master', 'main']
     tags: ['v*']
   pull_request:
   release:

@@ -5,6 +5,7 @@ on:
       - v*
     branches:
       - master
+      - main
     paths:
       - '**.go'
       - ".goreleaser.yml"

@@ -56,7 +56,7 @@ no effort is too small.
 
 Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## Dev helpers
+### Dev helpers
 
 Pre-commit script for install: https://pre-commit.com
 

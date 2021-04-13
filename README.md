@@ -40,6 +40,10 @@ args ["golang-repo-template","hello","world"]
 go get moul.io/golang-repo-template
 ```
 
+##Dev helpers
+
+Pre-commit script for install: https://pre-commit.com
+
 ### Releases
 
 See https://github.com/moul/golang-repo-template/releases

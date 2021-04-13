@@ -40,10 +40,6 @@ args ["golang-repo-template","hello","world"]
 go get moul.io/golang-repo-template
 ```
 
-## Dev helpers
-
-Pre-commit script for install: https://pre-commit.com
-
 ### Releases
 
 See https://github.com/moul/golang-repo-template/releases
@@ -59,6 +55,11 @@ Everyone is encouraged to look at what they can do on their own scale;
 no effort is too small.
 
 Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+## Dev helpers
+
+Pre-commit script for install: https://pre-commit.com
+
 
 ### Contributors ✨
 

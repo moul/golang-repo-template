@@ -60,7 +60,6 @@ Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 Pre-commit script for install: https://pre-commit.com
 
-
 ### Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->

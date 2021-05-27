@@ -13,7 +13,3 @@ generate: install
 	embedmd -w README.md
 	rm -rf .tmp
 .PHONY: generate
-
-lint:
-	cd tool/lint; make
-.PHONY: lint

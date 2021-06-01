@@ -7,8 +7,22 @@ on:
   release:
     types: [published,released]
 
+
 jobs:
+  repoman:
+    runs-on: ubuntu-latest
+    outputs:
+      has-docker: ${{ steps.info.outputs.has-docker }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - uses: moul/repoman-action@v1
+        id: info
+
   multi:
+    needs: repoman
+    if: needs.repoman.outputs.has-docker == 'true'
     name: "build-and-push"
     runs-on: ubuntu-latest
     steps:

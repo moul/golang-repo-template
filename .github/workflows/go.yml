@@ -27,7 +27,19 @@ on:
       - ".github/workflows/go.yml"
 
 jobs:
+  repoman:
+    runs-on: ubuntu-latest
+    outputs:
+      has-go-binary: ${{ steps.info.outputs.has-go-binary }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - uses: moul/repoman-action@v1
+        id: info
   goreleaser-dryrun:
+    needs: repoman
+    if: needs.repoman.outputs.has-go-binary == 'true'
     strategy:
       matrix:
         golang: [1.16.x]
@@ -103,6 +115,7 @@ jobs:
           key:          ${{ runner.os }}-go-${{ matrix.golang }}-v1-${{ hashFiles('**/go.sum') }}
           restore-keys: ${{ runner.os }}-go-${{ matrix.golang }}-v1-
       - name: Compile the project
+        if: needs.repoman.outputs.has-go-binary == 'true'
         run: make go.install
       - name: Run tests on Unix-like operating systems
         run: make unittest
@@ -144,6 +157,7 @@ jobs:
           key:          ${{ runner.os }}-go-${{ matrix.golang }}-v1-${{ hashFiles('**/go.sum') }}
           restore-keys: ${{ runner.os }}-go-${{ matrix.golang }}-v1-
       - name: Compile the project
+        if: needs.repoman.outputs.has-go-binary == 'true'
         run: make go.install
       - name: Check go.mod and go.sum
         run: |

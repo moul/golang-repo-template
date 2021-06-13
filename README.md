@@ -54,7 +54,7 @@ I'm well aware of that and I thank you in advance.
 Everyone is encouraged to look at what they can do on their own scale;
 no effort is too small.
 
-Everything on contribution is sum up here: [CONTRIBUTING.md](./CONTRIBUTING.md)
+Everything on contribution is sum up here: [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 
 ### Dev helpers
 

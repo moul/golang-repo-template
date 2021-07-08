@@ -10,6 +10,6 @@ require (
 	moul.io/climan v1.0.0
 	moul.io/motd v1.0.0
 	moul.io/srand v1.6.1
-	moul.io/u v1.26.0
+	moul.io/u v1.27.0
 	moul.io/zapconfig v1.4.0
 )

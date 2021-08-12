@@ -6,7 +6,7 @@ require (
 	github.com/peterbourgon/ff/v3 v3.1.0
 	github.com/tailscale/depaware v0.0.0-20210622194025-720c4b409502
 	go.uber.org/goleak v1.1.10
-	go.uber.org/zap v1.18.1
+	go.uber.org/zap v1.19.0
 	moul.io/climan v1.0.0
 	moul.io/motd v1.0.0
 	moul.io/srand v1.6.1

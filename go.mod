@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/peterbourgon/ff/v3 v3.1.0
 	github.com/tailscale/depaware v0.0.0-20210622194025-720c4b409502
-	go.uber.org/goleak v1.1.11-0.20210813005559-691160354723
+	go.uber.org/goleak v1.1.11
 	go.uber.org/zap v1.19.1
 	moul.io/climan v1.0.0
 	moul.io/motd v1.0.0

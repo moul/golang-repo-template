@@ -32,7 +32,7 @@ jobs:
     outputs:
       has-go-binary: ${{ steps.info.outputs.has-go-binary }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.5
         with:
           fetch-depth: '0'
       - uses: moul/repoman-action@v1
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.3.5
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -70,7 +70,7 @@ jobs:
       matrix:
         golangci_lint: [v1.38]
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2.5.2
         with:
@@ -86,7 +86,7 @@ jobs:
       matrix:
         golang: [1.16.x]
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: Install Go
         uses: actions/setup-go@v2
         with:
@@ -104,7 +104,7 @@ jobs:
       OS: macos-latest
       GOLANG: ${{ matrix.golang }}
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: Install Go
         uses: actions/setup-go@v2
         with:
@@ -146,7 +146,7 @@ jobs:
       OS: ubuntu-latest
       GOLANG: ${{ matrix.golang }}
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: Install Go
         uses: actions/setup-go@v2
         with:

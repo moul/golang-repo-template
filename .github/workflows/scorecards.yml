@@ -27,6 +27,8 @@ jobs:
           persist-credentials: false
 
       - name: "Run analysis"
+        env: {SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}}
+        if: env.SCORECARD_READ_TOKEN != null
         uses: ossf/scorecard-action@c1aec4ac820532bab364f02a81873c555a0ba3a1 # v1.0.4
         with:
           results_file: results.sarif
@@ -42,6 +44,8 @@ jobs:
 
       # Upload the results as artifacts (optional).
       - name: "Upload artifact"
+        env: {SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}}
+        if: env.SCORECARD_READ_TOKEN != null
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # v3.0.0
         with:
           name: SARIF file
@@ -50,6 +54,8 @@ jobs:
 
       # Upload the results to GitHub's code scanning dashboard.
       - name: "Upload to code-scanning"
+        env: {SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}}
+        if: env.SCORECARD_READ_TOKEN != null
         uses: github/codeql-action/upload-sarif@5f532563584d71fdef14ee64d17bafb34f751ce5 # v1.0.26
         with:
           sarif_file: results.sarif

@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # v3.0.0
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.0.0
         with:
           persist-credentials: false
 
@@ -30,7 +30,7 @@ jobs:
         env:
           SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}
         if: env.SCORECARD_READ_TOKEN != null
-        uses: ossf/scorecard-action@c1aec4ac820532bab364f02a81873c555a0ba3a1 # v1.0.4
+        uses: ossf/scorecard-action@e7fe8630eb359f01521c4828bc950ca1a55f4e63 # v1.0.4
         with:
           results_file: results.sarif
           results_format: sarif
@@ -48,7 +48,7 @@ jobs:
         env:
           SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}
         if: env.SCORECARD_READ_TOKEN != null
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # v3.0.0
+        uses: actions/upload-artifact@09a5d6a283da3e7c9f3253a5d4cdab2347712a66 # v3.0.0
         with:
           name: SARIF file
           path: results.sarif

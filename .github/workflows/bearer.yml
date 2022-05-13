@@ -1,0 +1,17 @@
+name: Bearer
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # Runs every day at 9:00 am
+
+permissions:
+  contents: read # Minimal permissions
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Bearer
+        uses: bearer/actions@main
+        env:
+          BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}

@@ -30,7 +30,7 @@ jobs:
         env:
           SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}
         if: env.SCORECARD_READ_TOKEN != null
-        uses: ossf/scorecard-action@f10ec7151e838890a3fbfa27875a33f80869977b # v1.0.4
+        uses: ossf/scorecard-action@5c8bc69dc88b65c66584e07611df79d3579b0377 # v1.0.4
         with:
           results_file: results.sarif
           results_format: sarif

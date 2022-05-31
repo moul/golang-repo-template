@@ -43,7 +43,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          - [1.18.x]
+          - 1.18.x
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

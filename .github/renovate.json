@@ -1,7 +1,6 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "groupName": "all",
-  "gomodTidy": true
-}
+   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+   "extends": [
+     "github>moul/renovate-config"
+   ]
+ }

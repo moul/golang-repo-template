@@ -26,6 +26,10 @@ on:
       - "go.*"
       - ".github/workflows/go.yml"
 
+concurrency:
+   group: ${{ github.workflow }}-${{ github.ref }}
+   cancel-in-progress: true
+
 jobs:
   repoman:
     runs-on: ubuntu-latest

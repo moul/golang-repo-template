@@ -5,5 +5,7 @@
   "no-trailing-punctuation": false,
   "no-bare-urls": false,
   "MD013": false,
-  "MD031": false
+  "MD031": false,
+  "MD051": false,
+  "MD053": false
 }

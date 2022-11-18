@@ -38,5 +38,3 @@ jobs:
           github_token: ${{ github.token }}
           reporter: github-pr-review
           locale: "US"
-      - name: alexjs
-        uses: theashraf/alex-action@master

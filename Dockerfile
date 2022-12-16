@@ -14,7 +14,7 @@ COPY            . ./
 RUN             make install
 
 # minimalist runtime
-FROM alpine:3.16.2
+FROM alpine:3.17.0
 LABEL           org.label-schema.build-date=$BUILD_DATE \
                 org.label-schema.name="golang-repo-template" \
                 org.label-schema.description="" \

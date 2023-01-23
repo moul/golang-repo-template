@@ -45,7 +45,6 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - fieldalignment
     - misspell
     - nakedret
     - nestif

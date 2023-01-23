@@ -9,8 +9,6 @@ run:
 linters-settings:
   golint:
     min-confidence: 0
-  maligned:
-    suggest-new: true
   goconst:
     min-len: 5
     min-occurrences: 4
@@ -40,29 +38,26 @@ linters:
     - gofmt
     - gofumpt
     - goimports
-    - golint
+    - revive
     - gomnd
     - gomodguard
     - gosec
     - gosimple
     - govet
     - ineffassign
-    - interfacer
-    - maligned
+    - fieldalignment
     - misspell
     - nakedret
     - nestif
     - noctx
     - nolintlint
     - prealloc
-    - scopelint
-    - sqlclosecheck
+    - exportloopref
     - staticcheck
-    - structcheck
+    - unused
     - stylecheck
     - typecheck
     - unconvert
     - unparam
     - unused
-    - varcheck
     - whitespace

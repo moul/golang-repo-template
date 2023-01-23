@@ -73,16 +73,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        golangci_lint: [v1.38]
+        golangci_lint: [v1.50.1]
         golang: [1.19.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Go
-        uses: actions/setup-go@v3
+      - uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.golang }}
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3
+      - uses: golangci/golangci-lint-action@v3
         with:
           version: ${{ matrix.golangci_lint }}
           #github-token: ${{ secrets.GITHUB_TOKEN }}

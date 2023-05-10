@@ -3,7 +3,7 @@ module moul.io/golang-repo-template
 go 1.18
 
 require (
-	github.com/peterbourgon/ff/v3 v3.3.0
+	github.com/peterbourgon/ff/v3 v3.3.1
 	github.com/tailscale/depaware v0.0.0-20210622194025-720c4b409502
 	go.uber.org/goleak v1.2.0
 	go.uber.org/zap v1.23.0

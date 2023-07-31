@@ -8,7 +8,7 @@ import (
 	"math/rand"
 	"os"
 
-	"github.com/peterbourgon/ff/v3"
+	ff "github.com/peterbourgon/ff/v3"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"moul.io/climan"
@@ -78,7 +78,7 @@ func run(args []string) error {
 	return nil
 }
 
-func doRoot(ctx context.Context, args []string) error {
+func doRoot(_ context.Context, args []string) error {
 	if len(args) > 0 {
 		return flag.ErrHelp
 	}

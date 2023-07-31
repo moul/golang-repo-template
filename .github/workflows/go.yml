@@ -47,7 +47,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.19.x
+          - 1.20.x
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -74,7 +74,7 @@ jobs:
     strategy:
       matrix:
         golangci_lint: [v1.50.1]
-        golang: [1.19.x]
+        golang: [1.20.x]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
@@ -93,7 +93,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.19.x
+          - 1.20.x
     steps:
       - uses: actions/checkout@v3
       - name: Install Go
@@ -109,7 +109,7 @@ jobs:
     strategy:
       matrix:
         golang:
-          - 1.19.x
+          - 1.20.x
     env:
       OS: macos-latest
       GOLANG: ${{ matrix.golang }}
@@ -149,12 +149,8 @@ jobs:
     strategy:
       matrix:
         golang:
-          #- 1.14.x
-          #- 1.15.x
-          #- 1.16.x
-          #- 1.17.x
-          - 1.18.x
           - 1.19.x
+          - 1.20.x
     env:
       OS: ubuntu-latest
       GOLANG: ${{ matrix.golang }}

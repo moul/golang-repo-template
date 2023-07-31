@@ -78,7 +78,7 @@ func run(args []string) error {
 	return nil
 }
 
-func doRoot(ctx context.Context, args []string) error {
+func doRoot(_ context.Context, args []string) error {
 	if len(args) > 0 {
 		return flag.ErrHelp
 	}
